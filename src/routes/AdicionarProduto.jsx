@@ -1,7 +1,32 @@
+import { useNavigate } from "react-router-dom";
+import { ListaProdutos } from "../components/ListaProdutos";
+
+
 export default function AdicionarProdutos() {
+    document.title = `Adicionar Produtos`;
+    const navigate = useNavigate();
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        let id = 1;
+        const procuraIdValido = () => {
+            while (ListaProdutos.find(produto => produto.id == id)) {
+                id++;
+            }
+        }
+        procuraIdValido();
+
+        const nome = event.target.idNome.value;
+        const preco = event.target.idPreco.value;
+        ListaProdutos.push({ id, nome, preco });
+
+
+        ListaProdutos.sort((a, b) => a.id - b.id);
+        alert("Produto adicionado com sucesso!");
+
+        navigate("/produtos");
     }
     return (
         <>
