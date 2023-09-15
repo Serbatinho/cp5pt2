@@ -4,7 +4,6 @@ import "./Produtos.css";
 import { AiFillEdit as Editar } from "react-icons/ai";
 import { MdDeleteForever as Excluir } from "react-icons/md";
 import { MdOutlineAdd as Adicionar } from "react-icons/md";
-import AdicionarProdutos from "./AdicionarProduto";
 
 export default function Produtos() {
 
