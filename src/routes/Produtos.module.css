@@ -1,0 +1,7 @@
+.tdClass{
+    background-color: red;
+    &:hover{
+        background-color: aquamarine;
+    }
+    /* 7:37 */
+}
